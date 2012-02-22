@@ -553,6 +553,7 @@ window.Quo = Quo;
         return this.each(function() {
             if (!_existsClass(name, this.className)) {
                 this.className += ' ' + name;
+                this.className = this.className.trim();
             }
         });
     };
@@ -562,8 +563,8 @@ window.Quo = Quo;
      */
     $.fn.removeClass = function(name) {
         return this.each(function() {
-            if (_existsClass(name, this.className)) {
-                this.className = this.className.replace(name, ' ');
+            if (_existsClass(name, this.className)) {..
+                this.className = this.className.replace(name, ' ').trim();
             }
         });
     };
@@ -577,6 +578,7 @@ window.Quo = Quo;
                 this.className = this.className.replace(name, ' ');
             } else {
                 this.className += ' ' + name;
+                this.className = this.className.trim();
             }
         });
     };
